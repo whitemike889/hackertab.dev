@@ -1,18 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { BsFillGearFill } from "react-icons/bs"
-import { CgTab } from 'react-icons/cg';
-import { BsFillBookmarksFill } from "react-icons/bs"
-import { ReactComponent as HackertabLogo } from '../logo.svg';
-import UserTags from "./UserTags";
-import { APP } from '../Constants';
-import SettingsModal from "../settings/SettingsModal";
-import { BsMoon } from "react-icons/bs"
-import { IoMdSunny } from "react-icons/io"
-import { trackThemeChange } from "../utils/Analytics"
-
+import { BsFillGearFill } from 'react-icons/bs'
+import { CgTab } from 'react-icons/cg'
+import { BsFillBookmarksFill } from 'react-icons/bs'
+import { ReactComponent as HackertabLogo } from '../logo.svg'
+import UserTags from './UserTags'
+import { APP } from '../Constants'
+import SettingsModal from '../settings/SettingsModal'
+import { BsMoon } from 'react-icons/bs'
+import { IoMdSunny } from 'react-icons/io'
+import { trackThemeChange } from '../utils/Analytics'
 
 function Header({ state, dispatcher, showSideBar, setShowSideBar }) {
-
   const [showSettings, setShowSettings] = useState(false)
   const [themeIcon, setThemeIcon] = useState(<BsMoon />)
   const isFirstRun = useRef(true)
@@ -23,7 +21,7 @@ function Header({ state, dispatcher, showSideBar, setShowSideBar }) {
 
   useEffect(() => {
     if (isFirstRun.current) {
-      isFirstRun.current = false;
+      isFirstRun.current = false
     } else {
       trackThemeChange(state.theme)
     }
@@ -46,31 +44,34 @@ function Header({ state, dispatcher, showSideBar, setShowSideBar }) {
   }
 
   const BookmarksBadgeCount = () => {
-    return (
-      state.userBookmarks.length > 0 ?
-        state.userBookmarks.length < 10 ?
-          <span className="badgeCount">{state.userBookmarks.length}</span> :
-          <span className="badgeCount">+9</span> :
-        null
-    )
+    return state.userBookmarks.length > 0 ? (
+      state.userBookmarks.length < 10 ? (
+        <span className="badgeCount">{state.userBookmarks.length}</span>
+      ) : (
+        <span className="badgeCount">+9</span>
+      )
+    ) : null
   }
 
   return (
     <>
-      <SettingsModal
-        showSettings={showSettings}
-        setShowSettings={setShowSettings} />
+      <SettingsModal showSettings={showSettings} setShowSettings={setShowSettings} />
 
       <header className="AppHeader">
         <span className="AppName">
-          <i className="logo"><CgTab /></i> <HackertabLogo className="logoText" />
+          <i className="logo">
+            <CgTab />
+          </i>{' '}
+          <HackertabLogo className="logoText" />
         </span>
-        <div className="slogan">
-          {APP.slogan}
-        </div>
+        <div className="slogan">{APP.slogan}</div>
         <div className="extras">
-          <button className="extraBtn" onClick={onSettingsClick}><BsFillGearFill /></button>
-          <button className="extraBtn darkModeBtn" onClick={onThemeChange}>{themeIcon}</button>
+          <button className="extraBtn" onClick={onSettingsClick}>
+            <BsFillGearFill />
+          </button>
+          <button className="extraBtn darkModeBtn" onClick={onThemeChange}>
+            {themeIcon}
+          </button>
           <button className="extraBtn" onClick={() => setShowSideBar(!showSideBar)}>
             <BsFillBookmarksFill />
             <BookmarksBadgeCount />
@@ -83,4 +84,4 @@ function Header({ state, dispatcher, showSideBar, setShowSideBar }) {
   )
 }
 
-export default Header;
+export default Header

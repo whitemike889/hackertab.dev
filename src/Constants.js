@@ -1,10 +1,10 @@
-import HNCard from "./cards/HNCard";
-import DevToCard from "./cards/DevToCard";
-import ConferencesCard from "./cards/ConferencesCard";
-import JobsCard from "./cards/JobsCard";
-import ReposCard from "./cards/ReposCard";
-import ProductHuntCard from "./cards/ProductHuntCard";
-import RedditCard from "./cards/RedditCard";
+import HNCard from './cards/HNCard'
+import DevToCard from './cards/DevToCard'
+import ConferencesCard from './cards/ConferencesCard'
+import JobsCard from './cards/JobsCard'
+import ReposCard from './cards/ReposCard'
+import ProductHuntCard from './cards/ProductHuntCard'
+import RedditCard from './cards/RedditCard'
 
 const APP = {
   name: 'Hackertab.dev',
@@ -13,27 +13,34 @@ const APP = {
   ref: 'utm_source=hackertab.dev&utm_medium=post&utm_campaign=home',
   contactEmail: 'hello@hackertab.dev',
   maxCardsPerRow: 4,
-  donationLink: 'https://www.buymeacoffee.com/medyo'
+  donationLink: 'https://www.buymeacoffee.com/medyo',
 }
 
 export const LOCAL_CONFIGURATION = {
-  supportedTags: [] // Loaded remotly
+  supportedTags: [], // Loaded remotly
 }
-
 
 export const SUPPORTED_CARDS = [
   { value: 'github', analyticsTag: 'repos', label: 'Github repositories', component: ReposCard },
   { value: 'jobs', analyticsTag: 'jobs', label: 'Featured jobs', component: JobsCard },
   { value: 'hackernews', analyticsTag: 'hackernews', label: 'Hackernews', component: HNCard },
-  { value: 'conferences', analyticsTag: 'events', label: 'Upcoming events', component: ConferencesCard },
+  {
+    value: 'conferences',
+    analyticsTag: 'events',
+    label: 'Upcoming events',
+    component: ConferencesCard,
+  },
   { value: 'devto', analyticsTag: 'devto', label: 'DevTo', component: DevToCard },
-  { value: 'producthunt', analyticsTag: 'producthunt', label: 'Product Hunt', component: ProductHuntCard },
+  {
+    value: 'producthunt',
+    analyticsTag: 'producthunt',
+    label: 'Product Hunt',
+    component: ProductHuntCard,
+  },
   { value: 'reddit', analyticsTag: 'reddit', label: 'Reddit', component: RedditCard },
 ]
 
-export const LS_PREFERENCES_KEY = "hackerTabPrefs"
-export const LS_ANALYTICS_ID_KEY = "hackerTabAnalyticsId"
+export const LS_PREFERENCES_KEY = 'hackerTabPrefs'
+export const LS_ANALYTICS_ID_KEY = 'hackerTabAnalyticsId'
 
-export {
-  APP
-} 
+export { APP }

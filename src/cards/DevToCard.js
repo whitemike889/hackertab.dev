@@ -1,47 +1,52 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { FaDev } from 'react-icons/fa';
+import { FaDev } from 'react-icons/fa'
 import devtoApi from '../services/devto'
-import CardComponent from "../components/CardComponent"
-import ListComponent from "../components/ListComponent"
-import { format } from 'timeago.js';
+import CardComponent from '../components/CardComponent'
+import ListComponent from '../components/ListComponent'
+import { format } from 'timeago.js'
 import PreferencesContext from '../preferences/PreferencesContext'
-import CardLink from "../components/CardLink"
-import { BiCommentDetail } from 'react-icons/bi';
-import { MdAccessTime } from "react-icons/md"
-import { AiOutlineLike } from "react-icons/ai"
+import CardLink from '../components/CardLink'
+import { BiCommentDetail } from 'react-icons/bi'
+import { MdAccessTime } from 'react-icons/md'
+import { AiOutlineLike } from 'react-icons/ai'
 import CardItemWithActions from '../components/CardItemWithActions'
-import ColoredLanguagesBadge from "../components/ColoredLanguagesBadge"
-
+import ColoredLanguagesBadge from '../components/ColoredLanguagesBadge'
 
 const ArticleItem = ({ item, index, analyticsTag }) => {
-
   return (
     <CardItemWithActions
       source={'devto'}
       index={index}
       key={index}
       item={item}
-      cardItem={(
+      cardItem={
         <>
           <CardLink link={item.url} analyticsSource={analyticsTag}>
             {item.title}
           </CardLink>
           <p className="rowDescription">
-            <span className="rowItem"><MdAccessTime className={"rowTitleIcon"} />{format(new Date(item.published_at))}</span>
-            <span className="rowItem"><BiCommentDetail className={"rowTitleIcon"} />{item.comments_count} comments</span>
-            <span className="rowItem"><AiOutlineLike className={"rowTitleIcon"} />{item.public_reactions_count} reactions</span>
+            <span className="rowItem">
+              <MdAccessTime className={'rowTitleIcon'} />
+              {format(new Date(item.published_at))}
+            </span>
+            <span className="rowItem">
+              <BiCommentDetail className={'rowTitleIcon'} />
+              {item.comments_count} comments
+            </span>
+            <span className="rowItem">
+              <AiOutlineLike className={'rowTitleIcon'} />
+              {item.public_reactions_count} reactions
+            </span>
           </p>
 
           <p className="rowDetails">
             <ColoredLanguagesBadge languages={item.tag_list} />
           </p>
         </>
-      )}
+      }
     />
   )
 }
-
-
 
 function DevToCard({ analyticsTag, label }) {
   const preferences = useContext(PreferencesContext)
@@ -54,8 +59,7 @@ function DevToCard({ analyticsTag, label }) {
   }, [userSelectedTags])
 
   const fetchArticles = async () => {
-
-    const promises = userSelectedTags.map(tag => {
+    const promises = userSelectedTags.map((tag) => {
       if (tag.devtoValues) {
         return devtoApi.getArticles(tag.devtoValues[0])
       }
@@ -63,14 +67,16 @@ function DevToCard({ analyticsTag, label }) {
     })
 
     const results = await Promise.allSettled(promises)
-    return results.map(res => {
-      let value = res.value
-      if (res.status === 'rejected') {
-        value = []
-      }
-      return value
-    }).flat().sort((a, b) => b.public_reactions_count - a.public_reactions_count)
-
+    return results
+      .map((res) => {
+        let value = res.value
+        if (res.status === 'rejected') {
+          value = []
+        }
+        return value
+      })
+      .flat()
+      .sort((a, b) => b.public_reactions_count - a.public_reactions_count)
   }
 
   const renderArticles = (articles) => {
@@ -80,16 +86,8 @@ function DevToCard({ analyticsTag, label }) {
   }
 
   return (
-
-    <CardComponent
-      icon={<FaDev className="blockHeaderIcon blockHeaderWhite" />}
-      title={label}
-    >
-      <ListComponent
-        fetchData={fetchArticles}
-        renderData={renderArticles}
-        refresh={refresh}
-      />
+    <CardComponent icon={<FaDev className="blockHeaderIcon blockHeaderWhite" />} title={label}>
+      <ListComponent fetchData={fetchArticles} renderData={renderArticles} refresh={refresh} />
     </CardComponent>
   )
 }

@@ -4,11 +4,11 @@
   color: var(--primary-text-color);
 }
 .Page .title {
-  color: var(--primary-text-color)
+  color: var(--primary-text-color);
 }
 .Page button {
   background: var(--card-background-color);
-  border:none;
+  border: none;
   border-radius: 20px;
   border: 1px solid var(--card-border-color);
   padding: 8px 16px;

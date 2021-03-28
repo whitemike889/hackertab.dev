@@ -1,52 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:regular,600');
 
 body.dark {
-  --app-name-text-color: #FFF;
-  --background-color: #0D1116;
-  --primary-text-color: #FFF;
+  --app-name-text-color: #fff;
+  --background-color: #0d1116;
+  --primary-text-color: #fff;
   --primary-hover-text-color: #b1b1b1;
   --secondary-text-color: #a2a7ad;
   --overlay-background-color: #7985958a;
   --language-dot-background-color: #424d5a;
 
   --dark-mode-background-color: #1c2026;
-  --dark-mode-text-color: #F0C73D;
+  --dark-mode-text-color: #f0c73d;
 
   --scrollbar-background-color: #1d2126;
   --scrollbar-accent-color: #6c6e71;
 
   /** Buttons **/
-  --button-background-color: #1C2026 ;
-  --button-text-color: #FFF ;
+  --button-background-color: #1c2026;
+  --button-text-color: #fff;
 
   /**Card **/
-  --card-background-color: #0D1116;
+  --card-background-color: #0d1116;
   --card-header-text-color: #798595;
-  --card-header-background-color: #1C2026;
-  --card-border-color: #1F2429;
-  --card-content-divider:#1F2429;
+  --card-header-background-color: #1c2026;
+  --card-border-color: #1f2429;
+  --card-content-divider: #1f2429;
   --card-background-focus-color: #181c21;
 
   /*Tag*/
-  --tag-background-color: #1C2026;
-  --tag-border-color: #1F2429;
-  --tag-text-color: #FFFFFF;
+  --tag-background-color: #1c2026;
+  --tag-border-color: #1f2429;
+  --tag-text-color: #ffffff;
   --tag-secondary-color: #4d535a;
-  --tag-input-background: #FFF;
+  --tag-input-background: #fff;
 
   /*Card Action button*/
-  --card-actions-background-shadow: #1C2026;
+  --card-actions-background-shadow: #1c2026;
   --card-action-button-background: #798595;
-  --card-action-button-color: #FFF;
-  --card-active-action-button-background: #FFF;
+  --card-action-button-color: #fff;
+  --card-active-action-button-background: #fff;
   --card-active-action-button-color: #798595;
 }
 
 body.light {
-  --app-name-text-color: #253B53;
-  --background-color: #EFF6FE;
+  --app-name-text-color: #253b53;
+  --background-color: #eff6fe;
   --primary-text-color: #2d3b4a;
-  --secondary-text-color: #656D76;
+  --secondary-text-color: #656d76;
   --overlay-background-color: #0000005c;
   --primary-hover-text-color: #495a6b;
   --language-dot-background-color: #cfddec;
@@ -55,39 +55,40 @@ body.light {
   --scrollbar-accent-color: #b9cadc;
 
   --dark-mode-background-color: #243b53;
-  --dark-mode-text-color: #F0C73D;
+  --dark-mode-text-color: #f0c73d;
 
-  --button-background-color: #d2deeb ;
-  --button-text-color: #3C5065;
+  --button-background-color: #d2deeb;
+  --button-text-color: #3c5065;
 
   /**Card **/
-  --card-background-color: #FFFFFF;
-  --card-header-text-color: #3C5065;
-  --card-header-background-color: #F9FAFE;
+  --card-background-color: #ffffff;
+  --card-header-text-color: #3c5065;
+  --card-header-background-color: #f9fafe;
   --card-border-color: #007eff1f;
-  --card-content-divider:#e9ebec;
+  --card-content-divider: #e9ebec;
   --card-background-focus-color: #f5f8fb;
 
   /*Card Action button*/
   --card-actions-background-shadow: #edf5ff;
   --card-action-button-background: #d2deeb;
-  --card-action-button-color: #3C5065;
-  --card-active-action-button-background: #253B53;
-  --card-active-action-button-color: #FFF;
+  --card-action-button-color: #3c5065;
+  --card-active-action-button-background: #253b53;
+  --card-active-action-button-color: #fff;
 
   /*Tag*/
-  --tag-background-color: #243B53;
+  --tag-background-color: #243b53;
   --tag-border-color: #e9ebec;
-  --tag-text-color: #FFFFFF;
+  --tag-text-color: #ffffff;
   --tag-secondary-color: #e9ebec;
-  --tag-input-background: #243B53;
+  --tag-input-background: #243b53;
 }
 
-html, body {
-  background: var(--background-color); 
+html,
+body {
+  background: var(--background-color);
   color: var(--primary-text-color);
-  transition: background-color 0.3s ease-in-out;   
-  font-family: "nunito";
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'nunito';
   font-size: 100%;
 }
 
@@ -99,7 +100,6 @@ html, body {
 }
 
 a {
-
   color: var(--primary-text-color);
 }
 .App {
@@ -117,17 +117,17 @@ a {
   padding: 16px;
 }
 
-.ghostCard{
+.ghostCard {
   opacity: 0.3;
 }
-.cardLoading{
+.cardLoading {
   display: flex;
   justify-content: center;
   min-height: 240px;
   align-items: center;
 }
 .loadingIcon {
-  color: var(--app-name-text-color)
+  color: var(--app-name-text-color);
 }
 .AppHeader {
   display: flex;
@@ -135,7 +135,7 @@ a {
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  height:86px;
+  height: 86px;
   margin-bottom: 12px;
 }
 
@@ -153,7 +153,7 @@ a {
   margin-right: 12px;
   cursor: pointer;
   display: inline-flex;
-  vertical-align: middle
+  vertical-align: middle;
 }
 .linkItemIcon {
   margin-right: 4px;
@@ -166,7 +166,6 @@ a {
   flex: 1 1 auto;
 }
 .extras {
-
   flex-direction: row;
   margin-left: auto;
   margin-right: 16px;
@@ -182,7 +181,7 @@ a {
   background-color: var(--button-background-color);
   color: var(--button-text-color);
   margin-left: 8px;
-  height:40px;
+  height: 40px;
   width: 40px;
   line-height: 44px;
   font-size: 18px;
@@ -204,7 +203,7 @@ a {
 }
 .extraTextBtnIcon {
   margin-right: 4px;
-  transition: color 400ms,transform .1s;
+  transition: color 400ms, transform 0.1s;
 }
 .extraTextBtn:hover .extraTextBtnIcon {
   color: red;
@@ -226,7 +225,7 @@ a {
   bottom: -6px;
 }
 
-.AppName{
+.AppName {
   color: var(--app-name-text-color);
   text-align: left;
 }
@@ -240,14 +239,13 @@ a {
 .logoText {
   height: 16px;
   width: auto;
-  fill: var(--app-name-text-color)
+  fill: var(--app-name-text-color);
 }
 .cards {
-  display:flex;
+  display: flex;
   align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
 .block {
@@ -268,12 +266,11 @@ a {
   overflow-x: hidden;
 }
 
-
 .blockContent::-webkit-scrollbar {
   width: 6px;
 }
 
-.blockContent::-webkit-scrollbar-track-piece  {
+.blockContent::-webkit-scrollbar-track-piece {
   background-color: var(--scrollbar-background-color);
 }
 
@@ -282,7 +279,7 @@ a {
   background-color: var(--scrollbar-accent-color);
 }
 
-.dark .block{
+.dark .block {
   border: 1px solid var(--card-border-color);
 }
 .light .block {
@@ -305,7 +302,7 @@ a {
 .blockHeaderIcon {
   position: relative;
   top: 4px;
-  margin-right: 6px;;
+  margin-right: 6px;
 }
 
 .blockRow {
@@ -316,9 +313,9 @@ a {
 /* Actions */
 .blockActions {
   position: absolute;
-  transition: right .2s ease;
-  top:0;
-  right :-100%;
+  transition: right 0.2s ease;
+  top: 0;
+  right: -100%;
   background: linear-gradient(to right, transparent, var(--card-actions-background-shadow));
   height: 100%;
   width: 26%;
@@ -327,11 +324,11 @@ a {
   display: flex;
 }
 .blockActions.active {
-  right:0;
+  right: 0;
 }
 
 .blockRow:hover .blockActions {
-  right:0;
+  right: 0;
 }
 .blockActionButton.active {
   background-color: var(--card-active-action-button-background);
@@ -352,7 +349,6 @@ a {
   padding: 0;
 }
 
-
 .blockRow:hover {
   background-color: var(--card-background-focus-color);
 }
@@ -370,9 +366,8 @@ a {
 }
 
 .bookmarkBtn.active {
-  color: #3572a5
+  color: #3572a5;
 }
-
 
 .blockRow:hover .bookmarkBtn {
   visibility: visible;
@@ -384,8 +379,8 @@ a {
 
 .rowTitle {
   color: var(--primary-text-color);
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   font-size: 16px;
   text-decoration: none;
 }
@@ -394,18 +389,18 @@ a {
 }
 
 .dark .blockHeaderWhite {
-  color: white
+  color: white;
 }
 .light .blockHeaderWhite {
-  color: black
+  color: black;
 }
 .githubTitle {
   color: #0366d6;
 }
 
 .rowDescription {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   color: var(--secondary-text-color);
   margin-top: 8px;
   display: block;
@@ -413,7 +408,7 @@ a {
 }
 .rowDetails {
   display: block;
-  margin:0;
+  margin: 0;
   margin-top: 8px;
   display: flex;
   flex-direction: row;
@@ -436,12 +431,12 @@ a {
 .rowDescription .rowItem {
   font-size: 12px;
 }
-.rowDetails  .hnRowItem {
-  color: #F6682F
+.rowDetails .hnRowItem {
+  color: #f6682f;
 }
 
 .rowDetails .redditRowItem {
-  color: #FA481D;
+  color: #fa481d;
 }
 
 .rowItemIcon {
@@ -452,7 +447,7 @@ a {
   position: relative;
   top: 3px;
   margin-right: 6px;
-  color: #99A2AC
+  color: #99a2ac;
 }
 
 .break {
@@ -467,7 +462,7 @@ a {
 }
 
 .tag {
-  color:var(--tag-text-color);
+  color: var(--tag-text-color);
   font-weight: 500;
   background-color: var(--tag-background-color);
   border-radius: 20px;
@@ -495,21 +490,21 @@ a {
 }
 
 @media (max-width: 800px) {
-  .AppHeader{
+  .AppHeader {
     padding: 20px 0;
   }
-  .slogan  {
+  .slogan {
     display: none;
   }
   .tags {
     display: none;
   }
   .marketingBanner {
-    width: 80%
+    width: 80%;
   }
 }
 
-@media(min-width: 1800px) {
+@media (min-width: 1800px) {
   .App {
     width: 1800px;
     margin: 0 auto;
@@ -523,11 +518,12 @@ a {
   text-transform: capitalize;
 }
 .rowLanguage::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-radius: 8px;margin-right: 4px;
+  border-radius: 8px;
+  margin-right: 4px;
   background-color: var(--language-dot-background-color);
   display: relative;
 }
@@ -536,7 +532,7 @@ a {
 Github languages colors
 **/
 .gh-language-python::before {
-  background-color: #3572A5;
+  background-color: #3572a5;
 }
 
 .gh-language-javascript::before {
@@ -552,49 +548,49 @@ Github languages colors
   background-color: #ffac45;
 }
 .gh-language-go::before {
-  background-color: #00ADD8;
+  background-color: #00add8;
 }
 .gh-language-kotlin::before {
-  background-color: #F18E33;
+  background-color: #f18e33;
 }
 .gh-language-ruby::before {
   background-color: #701516;
 }
 .gh-language-php::before {
-  background-color: #4F5E95;
+  background-color: #4f5e95;
 }
 .gh-language-typescript::before {
-  background-color: #2B7489;
+  background-color: #2b7489;
 }
 .gh-language-objective-c::before {
-  background-color: #438EFF;
+  background-color: #438eff;
 }
 .gh-language-django::before {
-  background-color: #0C4B33;
+  background-color: #0c4b33;
 }
-*[class*="gh-language-node"]::before {
-  background-color: #5B9853;
+*[class*='gh-language-node']::before {
+  background-color: #5b9853;
 }
-*[class*="gh-language-angular"]::before {
-  background-color: #DE0032;
+*[class*='gh-language-angular']::before {
+  background-color: #de0032;
 }
-*[class*="gh-language-react"]::before {
-  background-color: #61DBFB;
+*[class*='gh-language-react']::before {
+  background-color: #61dbfb;
 }
-*[class*="gh-language-postgres"]::before {
+*[class*='gh-language-postgres']::before {
   background-color: #346792;
 }
-*[class*="gh-language-mongodb"]::before {
-  background-color: #14AA52;
+*[class*='gh-language-mongodb']::before {
+  background-color: #14aa52;
 }
-*[class*="gh-language-vue"]::before {
-  background-color: #41B884;
+*[class*='gh-language-vue']::before {
+  background-color: #41b884;
 }
 .gh-language-ruby-on-rails::before {
-  background-color: #CC0000;
+  background-color: #cc0000;
 }
 .gh-language-android::before {
-  background-color: #30D880;
+  background-color: #30d880;
 }
 
 .headerSelect {
@@ -620,9 +616,10 @@ Contextify
 .react-contexify__item__content {
   color: var(--primary-text-color) !important;
 }
-.react-contexify__item__content:hover, .react-contexify__item__content:active {
+.react-contexify__item__content:hover,
+.react-contexify__item__content:active {
   background-color: var(--app-name-text-color) !important;
-  color: var(--background-color) !important
+  color: var(--background-color) !important;
 }
 
 /**
@@ -643,7 +640,7 @@ Producthunt item
 .phContent {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%
+  flex-basis: 100%;
 }
 
 .phVote {
@@ -655,7 +652,6 @@ Producthunt item
   width: 45px;
   text-align: center;
   margin-left: 4px;
-  
 }
 
 .phVotesCount {
@@ -663,7 +659,6 @@ Producthunt item
   font-size: 14px;
   margin-top: 4px;
 }
-
 
 /* reddit flairs */
 
@@ -686,6 +681,6 @@ Producthunt item
 
 @media (max-width: 768px) {
   .marketingBanner {
-    width: 100%
+    width: 100%;
   }
 }
